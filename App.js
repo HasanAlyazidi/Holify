@@ -49,16 +49,9 @@ export default class App extends React.Component {
 
   loadAssetsAsync = async () => {
     const imageAssets = cacheImages([
-      require('./assets/images/screens/Main/bg.png'),
-      require('./assets/images/screens/Main/header-logo.png'),
-      require('./assets/images/screens/Main/celebrities.png'),
-      require('./assets/images/screens/Main/recent.png'),
-      require('./assets/images/flags/KW.png'),
-      require('./assets/images/flags/SA.png'),
-      require('./assets/images/flags/AE.png'),
-      require('./assets/images/flags/QA.png'),
-      require('./assets/images/flags/OM.png'),
-      require('./assets/images/flags/BH.png'),
+      require('./assets/images/screens/Main/logo.png'),
+      require('./assets/images/screens/Main/scan-button.png'),
+      require('./assets/images/screens/Main/app1.png'),
     ]);
 
     const { name: fontName, file: fontFile } = Fonts.normal;
