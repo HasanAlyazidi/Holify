@@ -7,6 +7,7 @@ import NavigatorService from '../utils/navigator';
 import t from '../i18n';
 import ErrorPage from '../components/ErrorPage';
 
+import { setPoints } from '../actions/points';
 import animation from '../assets/animations/check_animation.json';
 
 const { Lottie } = DangerZone;
@@ -31,6 +32,7 @@ export default class ScanScreen extends React.Component {
   handleBarCodeRead = ({ type, data }) => {
     this.setState({ hasCodeScanned: true }, () => {
       this._playAnimation();
+      setPoints();
     });
 
     console.log(`Bar code with type ${type} and data ${data} has been scanned!`);
@@ -85,6 +87,12 @@ export default class ScanScreen extends React.Component {
           <BarCodeScanner
             onBarCodeRead={this.handleBarCodeRead}
             style={StyleSheet.absoluteFill}
+          />
+
+          <Button
+            title={t('back')}
+            color="white"
+            onPress={() => NavigatorService.goBack()}
           />
         </View>
       );

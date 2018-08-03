@@ -1,13 +1,13 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground, Text, TouchableOpacity, Image } from 'react-native';
 
-import { Icon } from 'react-native-elements';
+import { connect } from 'react-redux';
 
 import NavigatorService from '../utils/navigator';
 
 import t from '../i18n';
 
-export default class MainScreen extends React.PureComponent {
+class MainScreen extends React.PureComponent {
   static navigationOptions = {
     title: null,
     header: null,
@@ -34,7 +34,7 @@ export default class MainScreen extends React.PureComponent {
           <View style={styles.contents}>
             <View style={styles.pointsView}>
               <Text style={styles.pointsTitle}>{t('myPoints')}</Text>
-              <Text style={styles.points}>350</Text>
+              <Text style={styles.points}>{this.props.points.points}</Text>
             </View>
 
             <TouchableOpacity onPress={() => NavigatorService.navigate('Scan')}>
@@ -112,3 +112,9 @@ const styles = StyleSheet.create({
     fontSize: 25,
   }
 });
+
+const mapStateToProps = state => ({
+  points: state.points,
+});
+
+export default connect(mapStateToProps)(MainScreen);

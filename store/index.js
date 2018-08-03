@@ -12,7 +12,7 @@ import mySaga from '../sagas';
 const config = {
   key: 'primary',
   storage: AsyncStorage,
-  whitelist: ['settings', 'user', 'cart', 'checkout'],
+  whitelist: ['settings', 'user', 'points'],
 };
 
 const persistedReducer = persistReducer(config, reducers);

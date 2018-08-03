@@ -78,6 +78,4 @@ export const setInitialScreen = (screenName) => {
 
 export const getInitialScreen = () => initialScreen;
 
-if (Platform.OS === 'android') {
-  SafeAreaView.setStatusBarHeight(0);
-}
+SafeAreaView.setStatusBarHeight(0);

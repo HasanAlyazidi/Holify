@@ -22,7 +22,7 @@ export default {
     menu: require('../../assets/images/screens/Main/menu-ltr.png')
   },
 
-  welcomeMessage: 'Welcome Holify',
+  welcomeMessage: 'Welcome To Holify',
   login: 'Login',
   logout: 'Logout',
   register: 'Register',
