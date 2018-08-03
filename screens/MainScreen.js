@@ -1,9 +1,11 @@
 import React from 'react';
-import { StyleSheet, View, ImageBackground, Text } from 'react-native';
+import { StyleSheet, View, ImageBackground, Text, TouchableOpacity, Image } from 'react-native';
 
 import { Icon } from 'react-native-elements';
 
 import NavigatorService from '../utils/navigator';
+
+import t from '../i18n';
 
 export default class MainScreen extends React.PureComponent {
   static navigationOptions = {
@@ -22,29 +24,27 @@ export default class MainScreen extends React.PureComponent {
           fadeDuration={0}>
 
           <View style={styles.header}>
-            <Icon
-              name="menu"
-              color="#bfbfbf"
-              underlayColor="transparent"
-              size={32}
-              containerStyle={styles.headerButtons}
-              onPress={() => NavigatorService.openDrawer()}
-            />
+            <TouchableOpacity onPress={() => NavigatorService.openDrawer()}>
+              <Image
+                style={styles.headerButtons}
+                source={t('images.menu')} />
+            </TouchableOpacity>
           </View>
           
-          <View>
-            <Text>Hi</Text>
+          <View style={styles.contents}>
+            <View style={styles.pointsView}>
+              <Text style={styles.pointsTitle}>{t('myPoints')}</Text>
+              <Text style={styles.points}>350</Text>
+            </View>
 
-            <TouchableHighlight onPress={this._onPressButton}>
-              <Image
+            <TouchableOpacity onPress={() => NavigatorService.navigate('Scan')}>
+              <ImageBackground
                 style={styles.scanButton}
                 source={require('../assets/images/screens/Main/scan-button.png')}>
-                <Text>Scan</Text>
-              </Image>
-            </TouchableHighlight>
-
+                <Text style={styles.scanButtonText}>{t('scan')}</Text>
+              </ImageBackground>
+            </TouchableOpacity>
           </View>
-
         </ImageBackground>
       </View>
     );
@@ -54,7 +54,7 @@ export default class MainScreen extends React.PureComponent {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#F2F2F2',
   },
 
   // header
@@ -63,10 +63,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     height: 55,
+    paddingTop: 10,
+    paddingHorizontal: 10,
   },
   headerButtons: {
-    width: 55,
-    height: 55,
+    width: 40,
+    height: 40,
   },
 
   content: {
@@ -74,9 +76,39 @@ const styles = StyleSheet.create({
     width: null,
     height: null,
   },
+  contents: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingTop: 20,
+    paddingBottom: 40,
+  },
+
+  pointsView: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  pointsTitle: {
+    color: '#295019',
+    fontSize: 15,
+    paddingHorizontal: 5,
+    backgroundColor: '#8FD460'
+  },
+  points: {
+    color: '#8FD460',
+    fontSize: 35,
+    fontFamily: 'normal'
+  },
 
   scanButton: {
-    width: 70,
-    height: 70,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 110,
+    height: 110,
+  },
+
+  scanButtonText: {
+    color: 'white',
+    fontSize: 25,
   }
 });

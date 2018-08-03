@@ -18,13 +18,20 @@ export default {
     paddingEnd: 'paddingRight',
   },
 
+  images: {
+    menu: require('../../assets/images/screens/Main/menu-ltr.png')
+  },
+
   welcomeMessage: 'Welcome Holify',
   login: 'Login',
   logout: 'Logout',
   register: 'Register',
   about: 'About Us',
   contact: 'Contact Us',
-  settings: 'Settings',
+  settings: 'Language',
+
+  myPoints: 'My Points',
+  scan: 'Scan',
 
   account: {
     back: 'Back',
@@ -45,18 +52,10 @@ export default {
     submit: 'Update My Account',
   },
 
-  aboutPage: {
-    owner: {
-      name: 'Ghader Al-Abdali',
-      subtitle: 'App Owner\nMobile: +96560608404\nEmail: rivulet_kw@hotmail.com',
-    },
-    developer: {
-      name: 'Hasan Al-Yazidi',
-      subtitle: 'Developer\nMobile: +966545482824\nEmail: hassanx220@gmail.com',
-    },
-    designer: {
-      name: 'Faisal Al-Nassir',
-      subtitle: 'Designer\nMobile: +966590299699\nEmail: de_faisal@hotmail.com',
+  permissions: {
+    camera: {
+      allowed: 'Requesting for camera permission',
+      denied: 'No access to camera',
     },
   },
 

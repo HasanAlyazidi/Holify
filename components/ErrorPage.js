@@ -21,7 +21,7 @@ const ErrorPage = ({
     {showButton && (
       <Button
         title={buttonTitle || t('errors.failedApi.tryAgain')}
-        backgroundColor="#EBC061"
+        backgroundColor="#8FD460"
         buttonStyle={styles.button}
         onPress={onPress}
       />

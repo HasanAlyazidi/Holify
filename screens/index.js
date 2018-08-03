@@ -4,6 +4,7 @@ import { createStackNavigator, createDrawerNavigator, SafeAreaView } from 'react
 
 import WelcomeScreen from './WelcomeScreen';
 import MainScreen from './MainScreen';
+import ScanScreen from './ScanScreen';
 import LoginScreen from './LoginScreen';
 import RegisterScreen from './RegisterScreen';
 import MyAccountScreen from './MyAccountScreen';
@@ -24,6 +25,7 @@ const RootNavigator = () => {
     {
       Welcome: { screen: WelcomeScreen },
       Home: { screen: MainScreen },
+      Scan: { screen: ScanScreen },
       Login: { screen: LoginScreen },
       Register: { screen: RegisterScreen },
       MyAccount: { screen: MyAccountScreen },
@@ -40,7 +42,7 @@ const RootNavigator = () => {
       navigationOptions: {
         title: null,
         headerStyle: { backgroundColor: 'white' },
-        headerTintColor: '#fada90',
+        headerTintColor: 'black',
         drawerLockMode: 'locked-closed',
       },
     },

@@ -53,11 +53,6 @@ class Drawer extends React.Component {
 
     this.accountListWhenLoggedIn = [
       {
-        title: t('purchases.title'),
-        icon: { name: 'loyalty' },
-        onPress: () => NavigatorService.navigate('Purchases'),
-      },
-      {
         title: t('myAccount.title'),
         icon: { name: 'account-circle' },
         onPress: () => NavigatorService.navigate('MyAccount'),
@@ -150,10 +145,9 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 55,
+    height: 155,
+    paddingTop: 15,
     backgroundColor: 'white',
-    borderBottomColor: '#fada90',
-    borderBottomWidth: 3,
   },
 
   socialIcons: {

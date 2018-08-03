@@ -4,20 +4,13 @@ import { Updates } from 'expo';
 
 import { Button } from 'react-native-elements';
 
-import {
-  setLangSelectedIndex,
-  getLangSelectedIndex,
-} from '../actions/welcome';
-
-import { setLanguage, getLanguage, isFirstLaunch } from '../actions/settings';
+import { setLanguage, isFirstLaunch } from '../actions/settings';
 
 import Top from '../components/Top';
 
 import t, { isRTL } from '../i18n';
 
 import { Storage } from '../utils/Common';
-
-import NavigatorService from '../utils/navigator';
 
 export default class WelcomeScreen extends React.Component {
   static navigationOptions = {
@@ -28,27 +21,13 @@ export default class WelcomeScreen extends React.Component {
   constructor(props) {
     super(props);
 
-    this.setSelectedLanguage();
-
     this.state = {
       isFirstLaunch: isFirstLaunch(),
     };
   }
 
-  setSelectedLanguage = () => {
-    const language = getLanguage();
-
-    let langSelectedIndex = 0;
-
-    if (language) {
-      langSelectedIndex = language === 'ar' ? 0 : 1;
-    }
-
-    setLangSelectedIndex(langSelectedIndex);
-  };
-
   async saveLanguage(lang) {
-    const isEnglishSelected = getLangSelectedIndex() === 1;
+    const isRTL = lang !== 'en';
 
     setLanguage(lang);
 
@@ -57,10 +36,10 @@ export default class WelcomeScreen extends React.Component {
       ['isFirstLaunch', 'yes'],
     ]);
 
-    I18nManager.allowRTL(isEnglishSelected);
-    I18nManager.forceRTL(isEnglishSelected);
+    I18nManager.allowRTL(isRTL);
+    I18nManager.forceRTL(isRTL);
 
-    // reload if language is changed, otherwise go home
+    // reload if language is changed
     Updates.reload();
   }
 

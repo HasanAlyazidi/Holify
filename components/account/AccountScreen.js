@@ -100,7 +100,7 @@ export default class AccountScreen extends React.PureComponent {
             <Button
               large
               title={submitButtonTitle}
-              backgroundColor="#EBC061"
+              backgroundColor="#8FD460"
               containerViewStyle={styles.submitButton}
               onPress={() => submitButtonCode()}
             />

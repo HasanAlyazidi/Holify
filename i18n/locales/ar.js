@@ -4,8 +4,7 @@ export default {
 
   app: {
     name: 'قدسها',
-    description:
-      'إدارة النفايات',
+    description: 'إدارة النفايات',
   },
 
   // styles
@@ -19,13 +18,20 @@ export default {
     paddingEnd: 'paddingLeft',
   },
 
+  images: {
+    menu: require('../../assets/images/screens/Main/menu-rtl.png')
+  },
+
   welcomeMessage: 'مرحباً بك في قدسها',
   login: 'تسجيل الدخول',
   logout: 'تسجيل خروج',
   register: 'تسجيل حساب',
   about: 'من نحن',
   contact: 'اتصل بنا',
-  settings: 'الإعدادات',
+  settings: 'اللغة',
+
+  myPoints: 'نقاطي',
+  scan: 'فحص',
 
   account: {
     back: 'رجوع',
@@ -46,18 +52,10 @@ export default {
     submit: 'تحديث الحساب',
   },
 
-  aboutPage: {
-    owner: {
-      name: 'غدير العبدلي',
-      subtitle: 'مالكة التطبيق\nالجوال: +96560608404\nالبريد الإلكتروني: rivulet_kw@hotmail.com',
-    },
-    developer: {
-      name: 'حسن اليزيدي',
-      subtitle: 'المبرمج\nالجوال: +966545482824\nالبريد الإلكتروني: hassanx220@gmail.com',
-    },
-    designer: {
-      name: 'فيصل الناصر',
-      subtitle: 'المصمم\n+966590299699\nالبريد الإلكتروني: de_faisal@hotmail.com',
+  permissions: {
+    camera: {
+      allowed: 'جاري الوصول إلى الكاميرا',
+      denied: 'لا يمكن الوصول إلى الكاميرا',
     },
   },
 
